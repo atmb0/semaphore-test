@@ -2,6 +2,11 @@
 - hosts: inv1
   become: true
   tasks:
-    - name: Print OS info
-      ansible.builtin.package:
-        name: apache2
+    - name: Obter informações do sistema
+      ansible.builtin.setup:
+
+    - name: Exibir hostname e versão do sistema
+      ansible.builtin.debug:
+        msg: |
+          O hostname é {{ ansible_facts['hostname'] }}
+          A versão do sistema operacional é {{ ansible_facts['os_family'] }} {{ ansible_facts['distribution_version'] }}
