@@ -1,5 +1,5 @@
 ---
-- hosts: inv1
+- hosts: testone
   become: true
   tasks:
     - name: Obter informações do sistema
