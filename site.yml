@@ -1,7 +1,8 @@
 ---
 - hosts: all
-
+  remote_user: semauto
   become: true
+  become_method: sudo
   tasks:
     - name: update apt packages
       apt:
